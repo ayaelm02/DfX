@@ -48,7 +48,7 @@ def clean_json_response(text):
     return json_str.strip()
 
 class DfXAnalyzer:
-    def _init_(self, api_key: str):
+    def __init__(self, api_key: str):
         self.client = openai.OpenAI(api_key=api_key)
         self.categories = {
             'manufacturability': 'Manufacturing process and production specifications',
@@ -554,5 +554,5 @@ def main():
         # Cleanup
         os.remove("temp_image.jpg")
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     main()
